@@ -221,7 +221,7 @@ impl Ructe {
         let mut f = Vec::with_capacity(512);
         let outdir = outdir.join("templates");
         create_dir_all(&outdir)?;
-        f.write_all(b"pub mod templates {\n")?;
+        f.write_all(b"pub mod templates {\n#![allow(unused_imports)] \n")?;
         write_if_changed(
             &outdir.join("_utils.rs"),
             include_bytes!(concat!(
