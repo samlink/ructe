@@ -28,11 +28,11 @@ impl Template {
         name: &str,
     ) -> io::Result<()> {
         out.write_all(
-            b"use std::io::{self, Write};\n\
+            b"#![allow(unused)]\n\
+            use std::io::{self, Write};\n\
              #[allow(renamed_and_removed_lints)]\n\
              #[cfg_attr(feature=\"cargo-clippy\", \
              allow(useless_attribute))]\n\
-             #[allow(unused)]\n\
              use super::{Html,ToHtml};\n",
         )?;
         for line in &self.preamble {
