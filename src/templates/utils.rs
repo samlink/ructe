@@ -27,6 +27,7 @@ pub trait ToHtml {
     /// # Ok(())
     /// # }
     /// ```
+    #[allow(dead_code)]
     fn to_buffer(&self) -> io::Result<HtmlBuffer> {
         let mut buf = Vec::new();
         self.to_html(&mut buf)?;
