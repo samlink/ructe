@@ -28,7 +28,8 @@ impl Template {
         name: &str,
     ) -> std::fmt::Result {
         out.write_str(
-            "use std::io::{self, Write};\n\
+            "#![allow(unused)] \n            
+             use std::io::{self, Write};\n\
              #[allow(clippy::useless_attribute, unused)]\n\
              use super::{Html,ToHtml};\n",
         )?;

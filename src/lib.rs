@@ -243,6 +243,7 @@ impl Ructe {
         let mut f = String::with_capacity(512);
         let outdir = outdir.join("templates");
         create_dir_all(&outdir)?;
+        f.write_str("#[allow(unused_imports)]\n")?;
         f.write_str("pub mod templates {\n")?;
         write_if_changed(
             &outdir.join("_utils.rs"),
